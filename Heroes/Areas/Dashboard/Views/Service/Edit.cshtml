@@ -1,0 +1,28 @@
+﻿@model Service
+
+
+
+<form enctype="multipart/form-data" method="post">
+    <div class="container">
+        <div class="row">
+            <div class="input-group my-2">
+                <input value = "@Model.Title" name="Name" id="name" class="form-control" type="text" placeholder="Title" />
+            </div>
+             <div class="input-group my-2">
+                <input value = "@Model.Description" name="Description" id="Description" class="form-control" type="text" placeholder="Description" />
+            </div>
+            <div class="input-group my-2">
+                @ViewBag.PhotoError
+                <input "@Model.PhotoURL" name="NewPhoto" id="PhotoURL" class="form-control" type="file" placeholder="URl" />
+                <br/>
+            </div>
+            <div class ="card">
+                <div class = "card-body">
+                    <br/>
+                    <img height = "200" src = "~/img/@Model.PhotoURL"/>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-outline-success" value="Edit" />
+        </div>
+    </div>
+</form>
